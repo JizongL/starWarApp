@@ -31,8 +31,8 @@ state = {
       dataHandle:this.setDataHandle,
       data:this.state.data
     }
-    console.log(value,'test value')
-    console.log(this.state.data,'test data final')
+    //console.log(value,'test value')
+    //console.log(this.state.data,'test data final')
     return (
       <StarWarContext.Provider value={value}>
       <div className="App">

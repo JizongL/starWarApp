@@ -11,7 +11,7 @@ class ResultList extends React.Component{
   }
 
   render(){
-    console.log(this.props.data.results,'test context')
+    //console.log(this.props.data.results,'test context')
     
     return(
       <div>

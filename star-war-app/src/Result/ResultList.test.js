@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ResultList from './ResultList'
+import renderer from 'react-test-renderer'
 
 const object = {0:
   {birth_year: "19BBY",
@@ -15,9 +16,17 @@ const object = {0:
   mass: "77",
   name: "Luke Skywalker",
   skin_color: "fair"}}
-
-it('renders without crashing',()=>{
-  const div= document.createElement('div')
-  ReactDOM.render(<ResultList data={object}/>,div)
-  ReactDOM.unmountComponentAtNode(div)
+describe('test ResultList',()=>{
+  it('renders without crashing',()=>{
+    const div= document.createElement('div')
+    ReactDOM.render(<ResultList data={object}/>,div)
+    ReactDOM.unmountComponentAtNode(div)
+  })
+  
+  it('redners the UI as expected',()=>{
+    const tree = renderer
+    .create(<ResultList data={object}/>).toJSON;
+    expect(tree).toMatchSnapshot();
+  
+  });
 })

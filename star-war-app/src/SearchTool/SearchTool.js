@@ -44,7 +44,7 @@ class SearchTool extends React.Component{
     e.preventDefault()
     let searchTerm = this.state.searchTerm;
     let category = this.state.searchCategory
-    console.log(searchTerm,category,'test search and cat')
+    //console.log(searchTerm,category,'test search and cat')
     this.doFetch(searchTerm,category)
     
   }
@@ -53,7 +53,7 @@ class SearchTool extends React.Component{
     
     const options=this.context.search.map((option,index)=>
       <option key={index}>{option}</option>)
-      console.log(this.state,'test data')
+     // console.log(this.state,'test data')
     return(
       <div>
       <form className='search-form'
